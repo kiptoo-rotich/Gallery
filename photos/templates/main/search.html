@@ -1,12 +1,24 @@
 {%extends 'main/base.html'%}
 {%block content%}
 <div class="container">
-<div class="row">
-    {%if photos%}
-    <h3>Found {{photos|length}} of searched term {{message}}</h3>
-    {%else%}
-    <h3>Found 0 photos for searched term {{message}}</h3>
-    {%endif%}
-</div>
+    <div class="row">
+        {%if photos%}
+        <h3>Found {{photos|length}} of searched term {{message}}</h3>
+        {%else%}
+        <h3>Found 0 photos for searched term {{message}}</h3>
+        {%endif%}
+    </div>
+
+    <div class="row">
+        {%if photos%}
+        {%for photo in photos%}
+        <div class="col-sm-6 col-md-3">
+            <h1>{{photo.category}}</h1>
+        </div>
+        {%endfor%}
+        {%else%}
+        <h2 class="text-center bg-warning">Nothing</h2>
+        {%endif%}
+    </div>
 </div>
 {%endblock%}
