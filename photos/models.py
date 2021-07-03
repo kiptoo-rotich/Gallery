@@ -22,6 +22,11 @@ class Image(models.Model):
     def save_image(self):
         self.save()
         
+    @classmethod
+    def search(cls,search_term):
+        photo=cls.objects.filter(title__icontains=search_term)
+        return photo
+        
 class Category(models.Model):
     category=models.CharField(max_length=30)
     user = models.ForeignKey('User',on_delete=models.CASCADE,)
