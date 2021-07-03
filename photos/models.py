@@ -8,6 +8,15 @@ class User(models.Model):
     
     def __str__(self):
         return self.firstname
+    
+    def save_user(self):
+        self.save()
+    
+    def delete_user(self):
+        self.delete()
+    
+    def update_user(self,firstname):
+        self.update(firstname)
 
 class Image(models.Model):
     image=models.ImageField(upload_to='images/',default="Image")
