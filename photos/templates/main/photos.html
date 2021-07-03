@@ -1,8 +1,7 @@
 {%extends 'main/base.html'%}
+{%block content%}
+{{block.super}}
 {%for photo in photos%}
-<div class="container">
-    <div class="row">
-        <img src="{{photo.image.url}}" class="img-responsive" alt="Image">
-    </div>
-</div>
+
 {%endfor%}
+{%endblock%}
