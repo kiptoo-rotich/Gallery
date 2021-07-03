@@ -14,8 +14,8 @@ class Image(models.Model):
     image_name=models.CharField(max_length=40)
     image_description=models.TextField(blank=False,default="Image description")
     user = models.ForeignKey('User',on_delete=models.CASCADE,)
-    category = models.ForeignKey('Category',on_delete=models.CASCADE,null=True)
-    location = models.ForeignKey('Location',on_delete=models.CASCADE,null=True)
+    category = models.ForeignKey('Category',on_delete=models.CASCADE)
+    location = models.ForeignKey('Location',on_delete=models.CASCADE)
     pub_date=models.DateTimeField(auto_now_add=True,null=True)
     
     def __str__(self):
@@ -26,13 +26,24 @@ class Image(models.Model):
         
     @classmethod
     def search(cls,search_term):
-        photo=cls.objects.filter(title__icontains=search_term)
-        return photo
+        photos=cls.objects.filter(title__icontains=search_term)
+        return photos
         
 class Category(models.Model):
     category=models.CharField(max_length=30)
     user = models.ForeignKey('User',on_delete=models.CASCADE,)
     
+    def __str__(self):
+        return self.category
+    
+    @classmethod
+    def search(cls,search_term):
+        photos=cls.objects.filter(category__icontains=search_term)
+        return photos
+    
 class Location(models.Model):
     location=models.CharField(max_length=30)
     user = models.ForeignKey('User',on_delete=models.CASCADE,)
+
+    def __str__(self):
+        return self.location
