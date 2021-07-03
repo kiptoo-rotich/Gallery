@@ -21,3 +21,11 @@ class Image(models.Model):
     
     def save_image(self):
         self.save()
+        
+class Category(models.Model):
+    category=models.CharField(max_length=30)
+    user = models.ForeignKey('User',on_delete=models.CASCADE,)
+    
+class Location(models.Model):
+    location=models.CharField(max_length=30)
+    user = models.ForeignKey('User',on_delete=models.CASCADE,)
