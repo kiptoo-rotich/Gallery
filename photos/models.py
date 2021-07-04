@@ -55,7 +55,7 @@ class Category(models.Model):
 
     
     def __str__(self):
-        return self.category,self.user,self.image
+        return self.category
     
     @classmethod
     def search(cls,search_term):
