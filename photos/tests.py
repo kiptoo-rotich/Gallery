@@ -1,5 +1,6 @@
 from django.test import TestCase
 from .models import User,Image
+import datetime as dt
 
 class UserTestClass(TestCase):
     #setup method
@@ -28,3 +29,8 @@ class UserTestClass(TestCase):
         self.enock.save_user()
         editted = User.objects.get(firstname="Enock").update(firstname="Kiptoo")
         self.assertEqual(first, second)(User.objects.get(lastname="Rotich"), User.objects.get(firstname="Kiptoo"))
+
+class ImageTestCase(TestCase):
+    #setup method
+    def setup(self):
+        self.image=Image(image="media/images/Man.PNG",image_name="Man",image_description="This is an image of the man",pub_date=dt.today())
