@@ -22,24 +22,29 @@
     {%include "navbar.html"%}
     {%block content%}
     {%if photos%}
-    {%for photo in photos%}
-    <div class="container">
-        <div class="row" style="display:flex">
-            <div class="col-sm-6 col-md-6 col-lg-6"><br><br><br>
-                <h3>{{photo.category}}</h3>
-                <img src="{{photo.image.url}}" class="img-responsive" alt="Image">
-                <p>{{photo.image_name}}</p>
-                <i>Posted {{photo.pub_date|timesince}}</i>
-            </div>
-        </div>
-    </div>
-    {%endfor%}
-    {%else%}
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-12 bg-warning"><h1 class="text-center">No photos yet</h1></div>
+            {%for photo in photos%}
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <div class="card">
+                    <h3>{{photo.category}}</h3>
+                    <a href="{% url 'photo' photo.id %}"><img src="{{photo.image.url}}" class="img-responsive"
+                            alt="Image"></a>
+                    <p>{{photo.image_name}}</p>
+                    <i>Posted {{photo.pub_date|timesince}}</i>
+                </div>
+            </div>
+            {%endfor%}
         </div>
     </div>
+    {%else%}
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 bg-warning">
+                <h1 class="text-center">No photos yet</h1>
+            </div>
+        </div>
+    </div> -->
     {%endif%}
     {%endblock%}
     {% block scripts %}

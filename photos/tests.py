@@ -24,13 +24,13 @@ class UserTestClass(TestCase):
         users=User.objects.all()
         self.assertTrue(len(users)==0)    
     
-    #Testing update method
-    def test_update_method2(self,firstname):
-        self.enock.save_user()
-        editted = User.objects.get(firstname="Enock").update(firstname="Kiptoo")
-        self.assertEqual(first, second)(User.objects.get(lastname="Rotich"), User.objects.get(firstname="Kiptoo"))
 
 class ImageTestCase(TestCase):
     #setup method
     def setup(self):
-        self.image=Image(image="media/images/Man.PNG",image_name="Man",image_description="This is an image of the man",pub_date=dt.today())
+        self.image=Image(image="media/images/Man.PNG",image_name="Man",image_description="This is an image of the man",user="Enock",category="Travel",location="Nairobi",pub_date=dt.today())
+    
+    #Testing instance
+    def test_instance(self):
+        self.assertTrue(isinstance(self.image,Image))
+    

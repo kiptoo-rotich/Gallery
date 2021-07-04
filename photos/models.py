@@ -15,7 +15,7 @@ class User(models.Model):
     def delete_user(self):
         self.delete()
     
-    def update_user(self,firstname):
+    def update_user(self):
         self.update(firstname)
 
 class Image(models.Model):
@@ -32,6 +32,17 @@ class Image(models.Model):
     
     def save_image(self):
         self.save()
+
+    def delete_image(self):
+        self.delete()
+    
+    def update_image(self):
+        self.update(image)
+    
+    @classmethod
+    def get_image_by_id(cls,id):
+        image=cls.objects.get(id=id)
+        return image
         
     @classmethod
     def search(cls,search_term):
