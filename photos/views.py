@@ -26,7 +26,7 @@ def search(request):
 def single_photo(request,photo_id):
     try:
         photo=Image.objects.get(id=photo_id)
-        photo_descriptions=Image.objects.get(id=photo_id)
+        image_description=Image.objects.get(id=photo_id)
     except DoesNotExist:
         raise Http404()
-    return render(request,'main/photo.html',{'photo':photo,"photo_descriptions":photo_descriptions})
+    return render(request,'main/photo.html',{'photo':photo,"image_decription":image_description})
