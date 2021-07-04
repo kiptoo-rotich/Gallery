@@ -6,7 +6,9 @@
             <img src="{{photo.image.url}}" class="img-responsive" alt="Image">
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4">
-            <h2>{{photo_descriptions}}</h2>
+            <h2>{{photo.image_name}}</h2>
+            <p>{{photo.image_description}}</p>
+            <i>Posted <b>{{photo.pub_date|timesince}}</b> ago by <b>{{photo.user.firstname}}</b></i>
         </div>
     </div>
 </div>

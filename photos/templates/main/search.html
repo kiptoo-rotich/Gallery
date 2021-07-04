@@ -14,6 +14,8 @@
         {%for photo in photos%}
         <div class="col-sm-6 col-md-3">
             <h1>{{photo.category}}</h1>
+            <p>{{photo.user.firstname}} {{photo.user.lastname}}</p>
+            <p>{{photo.user.email}}</p>
         </div>
         {%endfor%}
         {%else%}
