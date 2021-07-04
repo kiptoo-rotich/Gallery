@@ -31,7 +31,8 @@
                 <div class="card bg-primary">
                     <a href="{% url 'photo' photo.id %}"><img src="{{photo.image.url}}" class="img-responsive zoom"
                             alt="Image"></a>
-                    <p class="card-home">{{photo.user.firstname}} posted {{photo.image_name}} in <b>{{photo.location}}</b> <em>{{photo.pub_date|timesince}}</em> ago.</p>
+                    <p class="card-home">{{photo.user.firstname}} posted {{photo.image_name}} in
+                        <b>{{photo.location}}</b> <em>{{photo.pub_date|timesince}}</em> ago.</p>
                 </div>
             </div>
             {%endfor%}
