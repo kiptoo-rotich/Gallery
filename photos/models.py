@@ -50,8 +50,8 @@ class Image(models.Model):
         
 class Category(models.Model):
     category=models.CharField(max_length=30)
-    user = models.ForeignKey('User',on_delete=models.CASCADE,null=True)
-    image = models.ForeignKey('Image',on_delete=models.CASCADE,null=True)
+    image = models.ForeignKey('Image',on_delete=models.CASCADE)
+    user = models.ForeignKey('User',on_delete=models.CASCADE)
 
     
     def __str__(self):
