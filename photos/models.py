@@ -50,7 +50,7 @@ class Image(models.Model):
         
 class Category(models.Model):
     category=models.CharField(max_length=30)
-    image = models.ForeignKey('Image',on_delete=models.CASCADE)
+    image = models.ManyToManyField('Image')
     user = models.ForeignKey('User',on_delete=models.CASCADE)
 
     

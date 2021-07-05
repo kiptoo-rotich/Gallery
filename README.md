@@ -6,6 +6,9 @@
 ### Home page
 ![IP](https://user-images.githubusercontent.com/48821300/124427808-8f984d00-dd74-11eb-816b-7dad48e0b77b.png)
 
+### Single photo
+![IP1](https://user-images.githubusercontent.com/48821300/124479847-57623000-ddaf-11eb-8ac3-dd125776d5b6.png)
+
 
 ## Description
 This displays my gallery  and with photo's category,  name, location,  title and time past since it was posted. The project usesadmin dashboard to add data.

@@ -14,7 +14,7 @@
         {%for photo in photos%}
         <div class="col-sm-6 col-md-3">
             <h1>{{photo.category}}</h1>
-            <img src="{{photo.image.image.url}}" alt="Image">
+            <img src="{{photo.image}}" alt="Image">
             <p>{{photo.image.image_description}}</p>
             <p>{{photo.image.image_name}}</p>
             <p>Posted by {{photo.user.firstname}} {{photo.user.lastname}}</p>
